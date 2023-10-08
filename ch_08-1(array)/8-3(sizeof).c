@@ -21,7 +21,7 @@ int main(void)
     {
         total += score[i];
     }
-    avg = total / (double)count;
+    avg = total / (double)count; // total과 count가 모두 int형이므로 double로 캐스팅하였다.
 
     // 성적 출력
     for (i = 0; i < count; i++)
@@ -41,4 +41,7 @@ int main(void)
 이 경우 배열 요소의 개수를 직접 계산하여 반복문에 사용하는 방법이 있다.
 
 sizeof(배열명) / sizeof(배열 요소)
+
+
+위 코드에서는 배열 요소 하나의 크기로 배열크기를 나누어 배열 요소의 개수를 구했다.
 */
