@@ -27,7 +27,31 @@ void swap(double *pa, double *pb)
 
 void line_up(double *maxp, double *midp, double *minp)
 {
-    if ()
+    double temp;
+    printf("line_up1\n");
+    printf("%.2lf %.2lf %.2lf\n ", maxp, midp, minp);    // 0.00 0.00 0.00
+    printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 2.70 1.50 3.40
+
+    if (*minp > *midp)
+    {
+        printf("line_up2\n");
+        swap((double *)midp, (double *)minp);
+        printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 2.70 3.40 1.50
+    }
+
+    if (*midp > *maxp)
+    {
+        printf("line_up3\n");
+        swap((double *)maxp, (double *)midp);
+        printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 3.40 2.70 1.50
+    }
+
+    if (*minp > *midp)
+    {
+        printf("line_up2\n");
+        swap((double *)midp, (double *)minp);
+        printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 2.70 3.40 1.50
+    }
 }
 
 /*
