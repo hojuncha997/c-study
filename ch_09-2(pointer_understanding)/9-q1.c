@@ -29,27 +29,28 @@ void line_up(double *maxp, double *midp, double *minp)
 {
     double temp;
     printf("line_up1\n");
-    printf("%.2lf %.2lf %.2lf\n ", maxp, midp, minp);    // 0.00 0.00 0.00
-    printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 2.70 1.50 3.40
+    // printf("%.2lf %.2lf %.2lf\n ", maxp, midp, minp);    // 0.00 0.00 0.00
+    // printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 2.70 1.50 3.40
 
     if (*minp > *midp)
     {
         printf("line_up2\n");
-        swap((double *)midp, (double *)minp);
+        // swap((double *)midp, (double *)minp); 캐스팅 필요 없음
+        swap(midp, minp);
         printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 2.70 3.40 1.50
     }
 
     if (*midp > *maxp)
     {
         printf("line_up3\n");
-        swap((double *)maxp, (double *)midp);
+        swap(maxp, midp);
         printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 3.40 2.70 1.50
     }
 
     if (*minp > *midp)
     {
         printf("line_up2\n");
-        swap((double *)midp, (double *)minp);
+        swap(midp, minp);
         printf("%.2lf %.2lf %.2lf\n ", *maxp, *midp, *minp); // 2.70 3.40 1.50
     }
 }
