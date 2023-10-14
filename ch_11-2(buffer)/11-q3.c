@@ -8,18 +8,29 @@ int main(void)
 
     while (1)
     {
-        scanf("%c", &ch);
+        if (scanf("%c", &ch) == EOF) // EOF 검사를 여기로 옮깁니다.
+        {
+            break;
+        }
+
         if (ch == '\n')
         {
             if (maxLength < wordLength)
             {
                 maxLength = wordLength;
             }
+            wordLength = 0; // 단어 길이 초기화
         }
-        else if (ch == -1)
+        else
         {
-            break;
+            wordLength++;
         }
+    }
+
+    // 마지막 단어의 길이 검사를 위한 로직 추가
+    if (maxLength < wordLength)
+    {
+        maxLength = wordLength;
     }
 
     printf("가장 긴 단어의 길이: %d", maxLength);
